@@ -8,11 +8,10 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/bootdotdev/learn-cicd-starter/internal/database"
 	"github.com/go-chi/chi"
 	"github.com/go-chi/cors"
 	"github.com/joho/godotenv"
-
-	"github.com/bootdotdev/learn-cicd-starter/internal/database"
 
 	_ "github.com/tursodatabase/libsql-client-go/libsql"
 )
@@ -23,6 +22,8 @@ type apiConfig struct {
 
 //go:embed static/*
 var staticFiles embed.FS
+
+func unused() {}
 
 func main() {
 	err := godotenv.Load(".env")
